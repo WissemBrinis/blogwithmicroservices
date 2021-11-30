@@ -22,4 +22,4 @@ app.post("/posts/:id/comments", (req, res) => {
   res.status(201).send(comments);
 });
 
-app.listen(4001, () => console.log("Comments MicroService is working on 4001"));
+app.listen(5001, () => console.log("Comments MicroService is working on 5001"));

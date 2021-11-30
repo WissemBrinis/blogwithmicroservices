@@ -6,13 +6,14 @@ const CommentCreate = ({ postId }) => {
 
   const submitComment = async (event) => {
     event.preventDefault();
+    axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
     await axios
-      .post(`http://localhost/4001/posts/${postId}/comments`, {
+      .post(`http://localhost:5001/posts/${postId}/comments`, {
         content,
       })
       .then((res) => console.log(res))
-      .then(() => setContent(""))
       .catch((err) => console.log(err));
+    setContent("");
   };
   return (
     <div>
